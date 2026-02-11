@@ -63,19 +63,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Cursor piscando */
-#typewriter::after {
-    content: "|";
-    margin-left: 5px;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
 .hero h2 {
     color: #38bdf8;
     font-weight: 600;
@@ -184,12 +171,15 @@ body {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
+
     .hero h1 {
         font-size: 36px;
     }
+
     .section {
         padding: 70px 20px;
     }
+
     .navbar {
         padding: 15px 20px;
     }
@@ -200,6 +190,7 @@ body {
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
     <div><strong>Maria Clara</strong></div>
     <div>
@@ -211,9 +202,10 @@ body {
     </div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <h1 id="typewriter"></h1>
+        <h1>Analista de Dados Jr</h1>
         <h2>Transformando dados em decisões estratégicas</h2>
         <p>
             Experiência com SQL avançado, Python, ETL e Power BI.
@@ -222,6 +214,7 @@ body {
         <a href="#experiencia" class="button">Ver Experiência</a>
     </div>
 </section>
+
 <!-- SOBRE -->
 <section id="sobre" class="section">
     <h3>Sobre Mim</h3>
@@ -340,26 +333,6 @@ body {
 <div class="footer">
     © 2026 Maria Clara | Analista de Dados Jr
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-
-    const text = "Analista de Dados Jr";
-    const speed = 80;
-    let i = 0;
-    const element = document.getElementById("typewriter");
-
-    function typeWriter() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
-    }
-
-    typeWriter();
-});
-</script>
 
 </body>
 </html>
