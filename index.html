@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maria Clara | Analista de Dados Jr</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Rodriggo Marcelino Santos | Data Engineer & Data Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -18,85 +17,170 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #0f172a;
+    background: #0a0f1e;
     color: #e2e8f0;
+    line-height: 1.6;
 }
 
-/* NAVBAR */
+/* NAVBAR MELHORADA */
 .navbar {
     position: fixed;
     width: 100%;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(10, 15, 30, 0.95);
+    backdrop-filter: blur(10px);
     padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-.navbar a {
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
     color: #e2e8f0;
     text-decoration: none;
-    margin-left: 25px;
     font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
 }
 
-.navbar a:hover {
-    color: #38bdf8;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    transition: 0.3s;
 }
 
-/* HERO */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* HERO MELHORADO */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 0 8%;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background: radial-gradient(circle at top right, #1e1a3a, #0a0f1e);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
+    top: -250px;
+    right: -100px;
+    opacity: 0.1;
+    border-radius: 50%;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
-    font-size: 52px;
+    font-size: 56px;
     margin-bottom: 15px;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
-/* Cursor piscando */
+.gradient-text {
+    background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 #typewriter::after {
     content: "|";
     margin-left: 5px;
     animation: blink 1s infinite;
+    color: #38bdf8;
 }
 
 @keyframes blink {
-    0% { opacity: 1; }
     50% { opacity: 0; }
-    100% { opacity: 1; }
 }
 
 .hero h2 {
-    color: #38bdf8;
-    font-weight: 600;
-    margin-bottom: 20px;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .hero p {
     line-height: 1.8;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     color: #cbd5e1;
+    font-size: 18px;
+    max-width: 700px;
 }
 
 .button {
     display: inline-block;
-    background: #38bdf8;
-    color: #0f172a;
-    padding: 12px 25px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    margin-right: 15px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #38bdf8;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #94a3b8;
 }
 
 /* SECTION */
@@ -105,106 +189,314 @@ body {
 }
 
 .section h3 {
-    font-size: 32px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    color: #94a3b8;
     margin-bottom: 50px;
+    font-size: 18px;
+}
+
+/* SKILLS GRID */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.skill-item {
+    background: #1a1f35;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #2d334f;
+    transition: 0.3s;
+}
+
+.skill-item:hover {
+    border-color: #38bdf8;
+    transform: translateX(5px);
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: white;
+}
+
+.skill-percent {
     color: #38bdf8;
 }
 
-/* STACK */
-.badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #2d334f;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.badge {
-    background: #1e293b;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 14px;
-    border: 1px solid #334155;
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+    border-radius: 4px;
+    transition: width 1s ease;
 }
 
-/* EXPERIENCE */
+/* EXPERIENCE CARDS */
 .experience {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-}
-
-.exp-card {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #334155;
-}
-
-.exp-card h4 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.exp-card span {
-    font-size: 13px;
-    color: #94a3b8;
-}
-
-.exp-card ul {
-    margin-top: 15px;
-    padding-left: 20px;
-    line-height: 1.8;
-}
-
-/* PROJECTS */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
+.exp-card {
+    background: #1a1f35;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid #2d334f;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #38bdf8, #8b5cf6);
+}
+
+.exp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.exp-card h4 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.exp-card .company {
+    color: #38bdf8;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.exp-card .period {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 4px 12px;
+    background: #2d334f;
+    border-radius: 20px;
+}
+
+.exp-card ul {
+    margin-top: 20px;
+    padding-left: 20px;
+    color: #cbd5e1;
+}
+
+.exp-card li {
+    margin-bottom: 10px;
+}
+
+/* PROJECTS */
+.projects-scroll {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
 .project-card {
-    background: #1e293b;
+    background: #1a1f35;
     padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #334155;
+    border-radius: 16px;
+    border: 1px solid #2d334f;
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
     border-color: #38bdf8;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(56, 189, 248, 0.1);
+}
+
+.project-card h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tag {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.project-content {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #2d334f;
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+/* TAG COLORS */
+.python { background: #3776AB; }
+.ml { background: #9333ea; }
+.aws { background: #ff9900; }
+.spark { background: #e25a1c; }
+.snowflake { background: #00aaff; }
+.dbt { background: #ff694b; }
+.bigquery { background: #4285f4; }
+.looker { background: #06b6d4; }
+.airflow { background: #017cee; }
+.databricks { background: #ff3621; }
+.redshift { background: #8c4fff; }
+
+/* CONTACT */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background: #1a1f35;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #2d334f;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+}
+
+.contact-card i {
+    font-size: 32px;
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.contact-card h4 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #94a3b8;
+    word-break: break-all;
 }
 
 /* FOOTER */
 .footer {
     padding: 40px 8%;
     text-align: center;
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid #1a1f35;
+    color: #94a3b8;
 }
 
-/* RESPONSIVO */
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
 @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0a0f1e;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #2d334f;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
     .hero h1 {
         font-size: 36px;
     }
-    .section {
-        padding: 70px 20px;
+    
+    .stats {
+        flex-direction: column;
+        gap: 20px;
     }
-    .navbar {
-        padding: 15px 20px;
+    
+    .projects-scroll {
+        grid-template-columns: 1fr;
     }
 }
-
 </style>
 </head>
 
 <body>
 
 <div class="navbar">
-    <div><strong>Maria Clara</strong></div>
-    <div>
+    <div class="logo">Rodriggo Marcelino</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links">
         <a href="#sobre">Sobre</a>
-        <a href="#stack">Stack</a>
+        <a href="#stack">Conhecimentos</a>
         <a href="#experiencia">Experiência</a>
         <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
@@ -213,151 +505,283 @@ body {
 
 <section class="hero">
     <div class="hero-content">
-        <h1 id="typewriter"></h1>
-        <h2>Transformando dados em decisões estratégicas</h2>
+        <h1>
+            <span class="gradient-text">Olá, eu sou</span><br>
+            <span id="typewriter"></span>
+        </h1>
+        <h2>Data Engineer & Data Scientist</h2>
         <p>
-            Experiência com SQL avançado, Python, ETL e Power BI.
-            Desenvolvimento de dashboards executivos, KPIs e análises orientadas a negócio.
+            Profissional de TI desde 2020, com formação técnica em Desenvolvimento de Sistemas.
+            Especialista em engenharia e ciência de dados, atuando com Machine Learning,
+            arquitetura Lakehouse, cloud e modelagem analítica para tomada de decisão.
         </p>
-        <a href="#experiencia" class="button">Ver Experiência</a>
+        <a href="#projetos" class="button">Ver Projetos</a>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Anos de Experiência</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Projetos Entregues</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Tecnologias</div>
+            </div>
+        </div>
     </div>
 </section>
-<!-- SOBRE -->
+
 <section id="sobre" class="section">
     <h3>Sobre Mim</h3>
-    <p>
-        Analista de Dados Jr em formação com base sólida em Ciência da Computação e
-        experiência prática em manipulação, transformação e análise de dados.
-        Atuei na Lovelace Software desenvolvendo pipelines ETL, consultas SQL avançadas
-        e dashboards executivos voltados para apoio à tomada de decisão.
-    </p>
-
-    <p style="margin-top:20px;">
-        Possuo experiência na criação de KPIs estratégicos, modelagem relacional,
-        análise exploratória de dados (EDA) e otimização de queries com foco em performance.
-        Tenho facilidade em traduzir dados complexos em informações claras e acionáveis,
-        contribuindo para análises mais assertivas e orientadas a resultados.
-    </p>
-
-    <p style="margin-top:20px;">
-        Minha trajetória profissional também inclui experiências em marketing e atendimento,
-        o que fortaleceu minha comunicação com áreas de negócio e minha capacidade de
-        compreender diferentes contextos organizacionais. Busco atuar em ambientes orientados
-        a dados, onde possa gerar impacto por meio de análises estruturadas e soluções
-        baseadas em evidências.
-    </p>
-</section>
-
-
-<!-- STACK -->
-<section id="stack" class="section">
-    <h3>Stack Técnica</h3>
-    <div class="badges">
-        <div class="badge">Python</div>
-        <div class="badge">SQL Avançado</div>
-        <div class="badge">Power BI</div>
-        <div class="badge">ETL</div>
-        <div class="badge">PostgreSQL</div>
-        <div class="badge">MySQL</div>
-        <div class="badge">SQL Server</div>
-        <div class="badge">Modelagem de Dados</div>
-        <div class="badge">Criação de KPIs</div>
-        <div class="badge">Análise Exploratória</div>
+    <div class="section-subtitle">Conheça minha trajetória</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div>
+            <p style="margin-bottom: 20px; color: #cbd5e1; font-size: 18px;">
+                Atuo na área de tecnologia desde 2020, com experiência em análise, engenharia e ciência de dados.
+                Iniciei minha trajetória ainda aos 14 anos, consolidando minha base técnica no curso técnico
+                em Desenvolvimento de Sistemas.
+            </p>
+            <p style="color: #cbd5e1; font-size: 18px;">
+                Atualmente trabalho como Analista de Dados na Giro Rápido e também lidero uma empresa de BI,
+                atuando na construção de modelos de Machine Learning para análise e precificação de viagens.
+            </p>
+        </div>
+        <div style="background: #1a1f35; padding: 30px; border-radius: 16px; border: 1px solid #2d334f;">
+            <h4 style="color: white; margin-bottom: 20px;">Principais Entregas</h4>
+            <ul style="color: #cbd5e1; list-style: none;">
+                <li style="margin-bottom: 15px;">✓ Modelos de ML para precificação</li>
+                <li style="margin-bottom: 15px;">✓ Arquitetura Lakehouse</li>
+                <li style="margin-bottom: 15px;">✓ Dashboards executivos</li>
+                <li style="margin-bottom: 15px;">✓ Pipelines automatizados</li>
+            </ul>
+        </div>
     </div>
 </section>
 
-<!-- EXPERIÊNCIA -->
+<section id="stack" class="section">
+    <h3>Conhecimentos Técnicos</h3>
+    <div class="section-subtitle">Especialidades e tecnologias</div>
+    
+    <div class="skills-grid">
+        <div class="skill-item">
+            <div class="skill-header">
+                <span class="skill-name">Python</span>
+                <span class="skill-percent">95%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 95%"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-header">
+                <span class="skill-name">Machine Learning</span>
+                <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-header">
+                <span class="skill-name">Spark</span>
+                <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-header">
+                <span class="skill-name">SQL</span>
+                <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-header">
+                <span class="skill-name">Cloud (AWS/GCP)</span>
+                <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-header">
+                <span class="skill-name">Airflow</span>
+                <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="experiencia" class="section">
     <h3>Experiência Profissional</h3>
-
+    <div class="section-subtitle">Minha trajetória no mercado</div>
+    
     <div class="experience">
-
         <div class="exp-card">
-            <h4>Lovelace Software | Estagiária em Tecnologia</h4>
-            <span>Jun/2025 – Dez/2025</span>
+            <span class="period">2021 – Atual</span>
+            <h4>Analista de Dados</h4>
+            <div class="company">Giro Rápido</div>
             <ul>
-                <li>Construção de pipelines ETL para integração de múltiplas fontes.</li>
-                <li>Criação de queries SQL avançadas para relatórios estratégicos.</li>
-                <li>Desenvolvimento de dashboards no Power BI.</li>
-                <li>Análise exploratória de dados e geração de insights.</li>
+                <li>Visualização estratégica de dados e criação de relatórios executivos.</li>
+                <li>Desenvolvimento de aplicações analíticas com Streamlit.</li>
+                <li>Modelagem e transformação de dados para suporte à decisão.</li>
             </ul>
         </div>
 
         <div class="exp-card">
-            <h4>Novo Atacarejo | Marketing</h4>
-            <span>2023</span>
+            <span class="period">2022 – Atual</span>
+            <h4>Cientista & Engenheiro de Dados</h4>
+            <div class="company">Empresa de BI</div>
             <ul>
-                <li>Criação de materiais promocionais e apoio em campanhas.</li>
-                <li>Análise de performance de ações promocionais.</li>
+                <li>Modelos de ML para precificação de viagens.</li>
+                <li>Arquitetura de Data Lakehouse.</li>
+                <li>Orquestração de pipelines com Airflow e Spark.</li>
             </ul>
         </div>
 
         <div class="exp-card">
-            <h4>Ame Maite | Atendimento ao Cliente</h4>
-            <span>2023 – 2025</span>
+            <span class="period">2020 – 2024</span>
+            <h4>Desenvolvedor Freelancer</h4>
+            <div class="company">Autônomo</div>
             <ul>
-                <li>Atendimento presencial e online.</li>
-                <li>Operação de caixa e suporte administrativo.</li>
-                <li>Manutenção básica de computadores e redes.</li>
+                <li>Projetos web e soluções de dados.</li>
+                <li>Automação e análise com Python.</li>
             </ul>
         </div>
-
     </div>
 </section>
 
-<!-- PROJETOS -->
 <section id="projetos" class="section">
     <h3>Projetos</h3>
+    <div class="section-subtitle">Cases e soluções desenvolvidas</div>
 
-    <div class="projects">
-
-        <div class="project-card">
-            <h4>Dashboard de Vendas</h4>
-            <p>Análise de KPIs comerciais como faturamento e ticket médio.</p>
+    <div class="projects-scroll">
+        <div class="project-card" onclick="toggleProject(this)">
+            <h4>Pipeline de Precificação Inteligente</h4>
+            <div class="tags">
+                <span class="tag python">Python</span>
+                <span class="tag ml">ML</span>
+                <span class="tag spark">Spark</span>
+                <span class="tag aws">AWS</span>
+            </div>
+            <div class="project-content">
+                Modelo de regressão e redes neurais para precificação dinâmica de viagens,
+                com pipeline orquestrado e processamento distribuído. Resultado: aumento de 23% na precisão das previsões.
+            </div>
         </div>
 
-        <div class="project-card">
-            <h4>Análise de Churn</h4>
-            <p>Identificação de padrões de cancelamento utilizando SQL e Python.</p>
+        <div class="project-card" onclick="toggleProject(this)">
+            <h4>Lakehouse Analítico</h4>
+            <div class="tags">
+                <span class="tag snowflake">Snowflake</span>
+                <span class="tag dbt">DBT</span>
+                <span class="tag bigquery">BigQuery</span>
+            </div>
+            <div class="project-content">
+                Implementação de arquitetura Lakehouse com modelagem dimensional
+                e otimização de consultas analíticas. Redução de 40% no tempo de consulta.
+            </div>
         </div>
 
-        <div class="project-card">
-            <h4>Pipeline ETL Automatizado</h4>
-            <p>Fluxo automatizado de extração, transformação e carga de dados.</p>
+        <div class="project-card" onclick="toggleProject(this)">
+            <h4>Dashboard Executivo</h4>
+            <div class="tags">
+                <span class="tag looker">Looker</span>
+                <span class="tag python">Python</span>
+            </div>
+            <div class="project-content">
+                Desenvolvimento de dashboards estratégicos e KPIs para tomada de decisão
+                em tempo real para diretoria.
+            </div>
         </div>
 
+        <div class="project-card" onclick="toggleProject(this)">
+            <h4>Orquestração com Airflow</h4>
+            <div class="tags">
+                <span class="tag airflow">Airflow</span>
+                <span class="tag databricks">Databricks</span>
+                <span class="tag redshift">Redshift</span>
+            </div>
+            <div class="project-content">
+                Construção de DAGs para automação de pipelines e integração com ambientes cloud.
+                Processamento de 1TB+ diariamente.
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- CONTATO -->
 <section id="contato" class="section">
     <h3>Contato</h3>
-    <p>📍 João Pessoa - PB</p>
-    <p>📞 (83) 99961-5874</p>
-    <p>✉️ mariaclaralausantos5@gmail.com</p>
+    <div class="section-subtitle">Vamos conversar?</div>
+    
+    <div class="contact-grid">
+        <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h4>Email</h4>
+            <p>rodriggo-santos@hotmail.com</p>
+        </div>
+        <div class="contact-card">
+            <i class="fab fa-linkedin"></i>
+            <h4>LinkedIn</h4>
+            <p>linkedin.com/in/rodriggo-marcelino</p>
+        </div>
+        <div class="contact-card">
+            <i class="fab fa-github"></i>
+            <h4>GitHub</h4>
+            <p>github.com/Rodriggo-Marcelino</p>
+        </div>
+    </div>
 </section>
 
 <div class="footer">
-    © 2026 Maria Clara | Analista de Dados Jr
+    © 2026 Rodriggo Marcelino Santos. Todos os direitos reservados.
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-
-    const text = "Analista de Dados Jr";
-    const speed = 80;
+    const text = "Rodriggo Marcelino Santos";
     let i = 0;
-    const element = document.getElementById("typewriter");
-
     function typeWriter() {
         if (i < text.length) {
-            element.innerHTML += text.charAt(i);
+            document.getElementById("typewriter").innerHTML += text.charAt(i);
             i++;
-            setTimeout(typeWriter, speed);
+            setTimeout(typeWriter, 80);
         }
     }
-
     typeWriter();
+});
+
+function toggleProject(element) {
+    const content = element.querySelector(".project-content");
+    const allContents = document.querySelectorAll(".project-content");
+    
+    allContents.forEach(c => {
+        if (c !== content) c.style.display = "none";
+    });
+    
+    content.style.display = content.style.display === "block" ? "none" : "block";
+}
+
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+}
+
+// Fecha o menu ao clicar em um link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+    });
 });
 </script>
 
